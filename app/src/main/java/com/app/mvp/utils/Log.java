@@ -1,14 +1,14 @@
-package com.app.simplemvp.utils;
+package com.app.mvp.utils;
 
 /**
- * Log 管理工具类
- * @Author 王立强
+ * Log 锟斤拷锟斤拷锟斤拷锟斤拷
+ * @Author 锟斤拷锟斤拷强
  */
 public class Log {
     public static boolean mIsShow = true;
 
     /**
-     * 设置是否打开Log开关
+     * 锟斤拷锟斤拷锟角凤拷锟絃og锟斤拷锟斤拷
      *
      * @param pIsShow
      */
@@ -17,7 +17,7 @@ public class Log {
     }
 
     /**
-     * 根据tag打印相关v信息
+     * 锟斤拷锟斤拷tag锟斤拷印锟斤拷锟絭锟斤拷息
      *
      * @param tag
      * @param msg
@@ -33,7 +33,7 @@ public class Log {
     }
 
     /**
-     * 根据tag打印v信息,包括Throwable的信息
+     * 锟斤拷锟斤拷tag锟斤拷印v锟斤拷息,锟斤拷锟斤拷Throwable锟斤拷锟斤拷息
      * * @param tag
      *
      * @param msg
@@ -47,7 +47,7 @@ public class Log {
 
 
     /**
-     * 根据tag打印输出debug信息
+     * 锟斤拷锟斤拷tag锟斤拷印锟斤拷锟絛ebug锟斤拷息
      *
      * @param tag
      * @param msg
@@ -63,7 +63,7 @@ public class Log {
     }
 
     /**
-     * 根据tag打印输入debug信息 包括Throwable的信息
+     * 锟斤拷锟斤拷tag锟斤拷印锟斤拷锟斤拷debug锟斤拷息 锟斤拷锟斤拷Throwable锟斤拷锟斤拷息
      * * @param tag
      *
      * @param msg
@@ -76,7 +76,7 @@ public class Log {
     }
 
     /**
-     * 根据tag打印输出info的信息
+     * 锟斤拷锟斤拷tag锟斤拷印锟斤拷锟絠nfo锟斤拷锟斤拷息
      * * @param tag
      *
      * @param msg
@@ -92,7 +92,7 @@ public class Log {
     }
 
     /**
-     * 根据tag打印输入info信息 包括Thorwbale的信息
+     * 锟斤拷锟斤拷tag锟斤拷印锟斤拷锟斤拷info锟斤拷息 锟斤拷锟斤拷Thorwbale锟斤拷锟斤拷息
      *
      * @param tag
      * @param msg
@@ -105,7 +105,7 @@ public class Log {
     }
 
     /**
-     * 根据tag打印输出error信息
+     * 锟斤拷锟斤拷tag锟斤拷印锟斤拷锟絜rror锟斤拷息
      *
      * @param tag
      * @param msg
@@ -121,7 +121,7 @@ public class Log {
     }
 
     /**
-     * 根据tag打印输入的error信息 包括Thorwable的信息
+     * 锟斤拷锟斤拷tag锟斤拷印锟斤拷锟斤拷锟絜rror锟斤拷息 锟斤拷锟斤拷Thorwable锟斤拷锟斤拷息
      *
      * @param tag
      * @param msg

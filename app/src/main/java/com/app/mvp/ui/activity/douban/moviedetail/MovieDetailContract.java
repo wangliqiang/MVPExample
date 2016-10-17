@@ -1,11 +1,11 @@
-package com.app.simplemvp.ui.activity.douban.moviedetail;
+package com.app.mvp.ui.activity.douban.moviedetail;
 
-import com.app.simplemvp.base.BasePresenter;
-import com.app.simplemvp.base.BaseView;
-import com.app.simplemvp.model.MovieDetailInfo;
+import com.app.mvp.base.BasePresenter;
+import com.app.mvp.base.BaseView;
+import com.app.mvp.model.MovieDetailInfo;
 
 /**
- * Created by Õı¡¢«ø on 2016/10/12.
+ * Created by wangliqiang on 2016/10/12.
  */
 
 public class MovieDetailContract {

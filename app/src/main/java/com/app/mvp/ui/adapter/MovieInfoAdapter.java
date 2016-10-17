@@ -1,4 +1,4 @@
-package com.app.simplemvp.ui.adapter;
+package com.app.mvp.ui.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.CardView;
@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.app.simplemvp.R;
-import com.app.simplemvp.model.MovieInfo;
+import com.app.mvp.R;
+import com.app.mvp.model.MovieInfo;
 import com.bumptech.glide.Glide;
 
 import java.util.List;

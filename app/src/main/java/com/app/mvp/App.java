@@ -1,4 +1,4 @@
-package com.app.simplemvp;
+package com.app.mvp;
 
 import android.app.Application;
 
@@ -30,13 +30,13 @@ public class App extends Application {
             OkGo.getInstance()
                     //打开调试开关
                     .debug("error",true)
-                    //如果使用默认的 60秒
+                    //设置超时时间，默认60秒
                     .setConnectTimeout(OkGo.DEFAULT_MILLISECONDS)
                     .setReadTimeOut(OkGo.DEFAULT_MILLISECONDS)
                     .setWriteTimeOut(OkGo.DEFAULT_MILLISECONDS)
-                    //可以全局统一设置缓存模式,默认是不使用缓存
+                    //设置全局缓存，默认无缓存
                     .setCacheMode(CacheMode.NO_CACHE)
-                    //可以全局统一设置缓存时间,默认永不过期
+                    //设置全局缓存时间，默认永不过期
                     .setCacheTime(CacheEntity.CACHE_NEVER_EXPIRE);
         } catch (Exception e) {
             e.printStackTrace();

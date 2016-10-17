@@ -1,11 +1,11 @@
-package com.app.simplemvp.ui.activity.douban.movie;
+package com.app.mvp.ui.activity.douban.movie;
 
 import android.support.annotation.NonNull;
 
 import com.alibaba.fastjson.JSON;
-import com.app.simplemvp.api.ServerApi;
-import com.app.simplemvp.model.MovieInfo;
-import com.app.simplemvp.utils.Log;
+import com.app.mvp.api.ServerApi;
+import com.app.mvp.model.MovieInfo;
+import com.app.mvp.utils.Log;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.convert.StringConvert;
 import com.lzy.okrx.RxAdapter;
@@ -17,7 +17,7 @@ import rx.subscriptions.CompositeSubscription;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
- * Created by 王立强 on 2016/10/12.
+ * Created by wangliqiang on 2016/10/12.
  */
 
 public class MoviePresenter implements MovieContract.Presenter {
@@ -59,13 +59,13 @@ public class MoviePresenter implements MovieContract.Presenter {
 
     @Override
     public void subscribe() {
-        //这里处理一下预加载事件
+        //?????????????????
         Log.e("subscribe","subscribe");
     }
 
     @Override
     public void unsubscribe() {
-        //防止Rx内存泄漏，清空subscribe
+        //???Rx???й??????subscribe
         mSubscriptions.clear();
     }
 }

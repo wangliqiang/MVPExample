@@ -1,4 +1,4 @@
-package com.app.simplemvp;
+package com.app.mvp;
 
 import org.junit.Test;
 

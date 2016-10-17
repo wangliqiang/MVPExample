@@ -1,4 +1,4 @@
-package com.app.simplemvp.ui.activity.douban.movie;
+package com.app.mvp.ui.activity.douban.movie;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,13 +7,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
-import com.app.simplemvp.R;
-import com.app.simplemvp.base.BaseActivity;
-import com.app.simplemvp.model.MovieInfo;
-import com.app.simplemvp.ui.activity.douban.moviedetail.MovieDetailActivity;
-import com.app.simplemvp.ui.adapter.MovieInfoAdapter;
-import com.nispok.snackbar.Snackbar;
-import com.nispok.snackbar.SnackbarManager;
+import com.app.mvp.R;
+import com.app.mvp.base.BaseActivity;
+import com.app.mvp.model.MovieInfo;
+import com.app.mvp.ui.activity.douban.moviedetail.MovieDetailActivity;
+import com.app.mvp.ui.adapter.MovieInfoAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,23 +49,23 @@ public class MovieActivity extends BaseActivity implements MovieContract.View{
     private void initView() {
         //初始化Moviepresenter
         new MoviePresenter(this);
-        //设置标题
+        //设置toolbar
         toolbar.setTitle("豆瓣电影TOP250");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(v -> finish());
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        //加载电影数据
+        //获取数据
         mPresenter.getMovieInfo(start, count);
         adapter = new MovieInfoAdapter(this, listAll);
         recyclerView.setAdapter(adapter);
-        //设置加载动画颜色
+        //绑定swiperefreshlayout颜色
         swiperefreshlayout.setColorSchemeColors(getResources().getColor(R.color.colorPrimary));
-        //设置下拉加载
+        //下拉刷新
         swiperefreshlayout.setOnRefreshListener(() -> mPresenter.getMovieInfo(start, count));
-        //recycler滑动监听到最后一条然后加载更多
+        //recycler设置上拉加载
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
 
             @Override
@@ -88,7 +86,7 @@ public class MovieActivity extends BaseActivity implements MovieContract.View{
                 }
             }
         });
-        //由于RecycleView需要自定义点击事件，所以在适配器中使用回调
+        //RecycleAdapter 点击事件回调
         adapter.setOnItemClickListener((view, position) -> {
             Intent toDetail = new Intent(this, MovieDetailActivity.class);
             toDetail.putExtra("movieId", listAll.get(position).getId());

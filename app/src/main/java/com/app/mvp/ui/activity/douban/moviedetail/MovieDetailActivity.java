@@ -1,13 +1,13 @@
-package com.app.simplemvp.ui.activity.douban.moviedetail;
+package com.app.mvp.ui.activity.douban.moviedetail;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-import com.app.simplemvp.R;
-import com.app.simplemvp.base.BaseActivity;
-import com.app.simplemvp.model.MovieDetailInfo;
+import com.app.mvp.R;
+import com.app.mvp.base.BaseActivity;
+import com.app.mvp.model.MovieDetailInfo;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
@@ -35,7 +35,7 @@ public class MovieDetailActivity extends BaseActivity implements MovieDetailCont
 
     private int mParallaxImageHeight;
 
-    //鐢靛奖ID
+    //电影ID
     String movieId;
     String movieName;
 
@@ -67,7 +67,7 @@ public class MovieDetailActivity extends BaseActivity implements MovieDetailCont
         mScrollView.setScrollViewCallbacks(this);
 
         mParallaxImageHeight = getResources().getDimensionPixelSize(R.dimen.parallax_image_height);
-        //鍔犺浇鏁版嵁
+        //加载数据
         mPresenter.getMovieDetail(movieId);
     }
 

@@ -1,9 +1,9 @@
-package com.app.simplemvp.ui.activity.douban.moviedetail;
+package com.app.mvp.ui.activity.douban.moviedetail;
 
 import com.alibaba.fastjson.JSON;
-import com.app.simplemvp.api.ServerApi;
-import com.app.simplemvp.model.MovieDetailInfo;
-import com.app.simplemvp.utils.Log;
+import com.app.mvp.api.ServerApi;
+import com.app.mvp.model.MovieDetailInfo;
+import com.app.mvp.utils.Log;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.convert.StringConvert;
 import com.lzy.okrx.RxAdapter;

@@ -1,4 +1,4 @@
-package com.app.simplemvp.base;
+package com.app.mvp.base;
 
 /**
 // * Created by ÍõÁ¢Ç¿ on 2016/10/11.

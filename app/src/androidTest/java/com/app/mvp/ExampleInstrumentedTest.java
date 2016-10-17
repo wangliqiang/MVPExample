@@ -1,4 +1,4 @@
-package com.app.simplemvp;
+package com.app.mvp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
