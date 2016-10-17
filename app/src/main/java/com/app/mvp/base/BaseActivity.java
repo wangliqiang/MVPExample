@@ -9,7 +9,7 @@ import com.nispok.snackbar.SnackbarManager;
 import butterknife.ButterKnife;
 
 /**
- * Created by 王立强  on 2016/10/9.
+ * Created by ����ǿ  on 2016/10/9.
  */
 
 public abstract class BaseActivity extends AppCompatActivity{
@@ -26,6 +26,6 @@ public abstract class BaseActivity extends AppCompatActivity{
     }
 
     public void showError() {
-        SnackbarManager.show(Snackbar.with(this).text("ÍøÂçÁ¬½ÓÒì³£").duration(Snackbar.SnackbarDuration.LENGTH_SHORT));
+        SnackbarManager.show(Snackbar.with(this).text("?????????��??").duration(Snackbar.SnackbarDuration.LENGTH_SHORT));
     }
 }
