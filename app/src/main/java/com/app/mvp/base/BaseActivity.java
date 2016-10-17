@@ -9,7 +9,7 @@ import com.nispok.snackbar.SnackbarManager;
 import butterknife.ButterKnife;
 
 /**
- * Created by 王立强 on 2016/10/9.
+ * Created by 王立强  on 2016/10/9.
  */
 
 public abstract class BaseActivity extends AppCompatActivity{
