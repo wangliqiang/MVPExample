@@ -35,7 +35,7 @@ public class MovieDetailActivity extends BaseActivity implements MovieDetailCont
 
     private int mParallaxImageHeight;
 
-    //电影ID
+    //鐢靛奖ID
     String movieId;
     String movieName;
 
@@ -67,7 +67,7 @@ public class MovieDetailActivity extends BaseActivity implements MovieDetailCont
         mScrollView.setScrollViewCallbacks(this);
 
         mParallaxImageHeight = getResources().getDimensionPixelSize(R.dimen.parallax_image_height);
-        //加载数据
+        //鍔犺浇鏁版嵁
         mPresenter.getMovieDetail(movieId);
     }
 

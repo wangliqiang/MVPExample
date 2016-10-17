@@ -1,7 +1,7 @@
 package com.app.mvp.base;
 
 /**
- * Created by ÍõÁ¢Ç¿  on 2016/10/11.
+ * Created by ç‹ç«‹å¼º  on 2016/10/11.
  */
 
 public interface BasePresenter {

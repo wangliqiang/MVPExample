@@ -8,7 +8,7 @@ import com.lzy.okgo.cache.CacheMode;
 import com.squareup.leakcanary.LeakCanary;
 
 /**
- * Created by ÍõÁ¢Ç¿ on 2016/10/9.
+ * Created by ç‹ç«‹å¼º on 2016/10/9.
  */
 
 public class App extends Application {
@@ -22,21 +22,21 @@ public class App extends Application {
         }
         LeakCanary.install(this);
 
-        //³õÊ¼»¯
+        //åˆå§‹åŒ–
         OkGo.init(this);
 
         try {
-            //È«¾Ö²ÎÊıÉèÖÃ
+            //å…¨å±€å‚æ•°è®¾ç½®
             OkGo.getInstance()
-                    //´ò¿ªµ÷ÊÔ¿ª¹Ø
+                    //æ‰“å¼€è°ƒè¯•å¼€å…³
                     .debug("error",true)
-                    //ÉèÖÃ³¬Ê±Ê±¼ä£¬Ä¬ÈÏ60Ãë
+                    //è®¾ç½®è¶…æ—¶æ—¶é—´ï¼Œé»˜è®¤60ç§’
                     .setConnectTimeout(OkGo.DEFAULT_MILLISECONDS)
                     .setReadTimeOut(OkGo.DEFAULT_MILLISECONDS)
                     .setWriteTimeOut(OkGo.DEFAULT_MILLISECONDS)
-                    //ÉèÖÃÈ«¾Ö»º´æ£¬Ä¬ÈÏÎŞ»º´æ
+                    //è®¾ç½®å…¨å±€ç¼“å­˜ï¼Œé»˜è®¤æ— ç¼“å­˜
                     .setCacheMode(CacheMode.NO_CACHE)
-                    //ÉèÖÃÈ«¾Ö»º´æÊ±¼ä£¬Ä¬ÈÏÓÀ²»¹ıÆÚ
+                    //è®¾ç½®å…¨å±€ç¼“å­˜æ—¶é—´ï¼Œé»˜è®¤æ°¸ä¸è¿‡æœŸ
                     .setCacheTime(CacheEntity.CACHE_NEVER_EXPIRE);
         } catch (Exception e) {
             e.printStackTrace();

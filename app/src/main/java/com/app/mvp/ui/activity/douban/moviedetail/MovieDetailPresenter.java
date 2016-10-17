@@ -15,7 +15,7 @@ import rx.subscriptions.CompositeSubscription;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
- * Created by ÍõÁ¢Ç¿ on 2016/10/12.
+ * Created by çŽ‹ç«‹å¼º on 2016/10/12.
  */
 
 public class MovieDetailPresenter implements MovieDetailContract.Presenter{

@@ -59,13 +59,11 @@ public class MoviePresenter implements MovieContract.Presenter {
 
     @Override
     public void subscribe() {
-        //?????????????????
         Log.e("subscribe","subscribe");
     }
 
     @Override
     public void unsubscribe() {
-        //???Rx???§Û??????subscribe
         mSubscriptions.clear();
     }
 }

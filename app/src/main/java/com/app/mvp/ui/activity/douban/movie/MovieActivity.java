@@ -47,25 +47,25 @@ public class MovieActivity extends BaseActivity implements MovieContract.View{
     }
 
     private void initView() {
-        //初始化Moviepresenter
+        //鍒濆鍖朚oviepresenter
         new MoviePresenter(this);
-        //设置toolbar
-        toolbar.setTitle("豆瓣电影TOP250");
+        //璁剧疆toolbar
+        toolbar.setTitle("璞嗙摚鐢靛奖TOP250");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(v -> finish());
 
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        //获取数据
+        //鑾峰彇鏁版嵁
         mPresenter.getMovieInfo(start, count);
         adapter = new MovieInfoAdapter(this, listAll);
         recyclerView.setAdapter(adapter);
-        //绑定swiperefreshlayout颜色
+        //缁戝畾swiperefreshlayout棰滆壊
         swiperefreshlayout.setColorSchemeColors(getResources().getColor(R.color.colorPrimary));
-        //下拉刷新
+        //涓嬫媺鍒锋柊
         swiperefreshlayout.setOnRefreshListener(() -> mPresenter.getMovieInfo(start, count));
-        //recycler设置上拉加载
+        //recycler璁剧疆涓婃媺鍔犺浇
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
 
             @Override
@@ -86,7 +86,7 @@ public class MovieActivity extends BaseActivity implements MovieContract.View{
                 }
             }
         });
-        //RecycleAdapter 点击事件回调
+        //RecycleAdapter 鐐瑰嚮浜嬩欢鍥炶皟
         adapter.setOnItemClickListener((view, position) -> {
             Intent toDetail = new Intent(this, MovieDetailActivity.class);
             toDetail.putExtra("movieId", listAll.get(position).getId());
@@ -95,7 +95,7 @@ public class MovieActivity extends BaseActivity implements MovieContract.View{
         });
     }
 
-    //加载更多
+    //鍔犺浇鏇村
     private void loadMore() {
         start = start + count;
         mPresenter.getMovieInfo(start, count);

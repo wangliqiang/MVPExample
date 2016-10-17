@@ -20,7 +20,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * Created by ÍõÁ¢Ç¿ on 2016/10/9.
+ * Created by ç‹ç«‹å¼º on 2016/10/9.
  */
 
 public class MovieInfoAdapter extends Adapter<ViewHolder> {
@@ -66,9 +66,9 @@ public class MovieInfoAdapter extends Adapter<ViewHolder> {
             for (int i = 0; i < list.get(position).getCasts().size(); i++) {
                 cast += list.get(position).getCasts().get(i).getName() + " / ";
             }
-            ((itemViewHolder) holder).movieCast.setText("µ¼Ñİ£º" + list.get(position).getDirectors().get(0).getName() +
-                    "\nÑİÔ±£º" + cast.substring(0, cast.lastIndexOf("/")));
-            ((itemViewHolder) holder).movieGenres.setText("ÀàĞÍ£º" + list.get(position).getGenres().toString().replace("[", "").replace("]", ""));
+            ((itemViewHolder) holder).movieCast.setText("å¯¼æ¼”ï¼š" + list.get(position).getDirectors().get(0).getName() +
+                    "\næ¼”å‘˜ï¼š" + cast.substring(0, cast.lastIndexOf("/")));
+            ((itemViewHolder) holder).movieGenres.setText("ç±»å‹ï¼š" + list.get(position).getGenres().toString().replace("[", "").replace("]", ""));
             if (onItemClickListener != null) {
                 ((itemViewHolder) holder).itemClick.setOnClickListener(new View.OnClickListener() {
                     @Override
