@@ -5,7 +5,7 @@ import com.app.mvp.base.BaseView;
 import com.app.mvp.model.MovieInfo;
 
 /**
- * Created by wangliqiang on 2016/10/12.
+ * Created by 王立强 on 2016/10/12.
  */
 
 public class MovieContract {
