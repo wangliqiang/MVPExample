@@ -39,4 +39,8 @@
     <!-- position bar -->
     <color name="bg_position_bar_up">#0D8BC34A</color>
     <color name="bg_position_bar_down">#1A8BC34A</color>
+
+    <color name="dark_purple">#171142</color>
+    <color name="blue">#6498FE</color>
+    <color name="teal">#009587</color>
 </resources>
