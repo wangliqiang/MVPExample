@@ -2,6 +2,7 @@ package com.app.mvp.ui.activity.douban.moviedetail;
 
 import com.alibaba.fastjson.JSON;
 import com.app.mvp.api.ServerApi;
+import com.app.mvp.base.RxPresenter;
 import com.app.mvp.model.MovieDetailInfo;
 import com.app.mvp.utils.Log;
 import com.lzy.okgo.OkGo;
@@ -18,7 +19,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * Created by 王立强 on 2016/10/12.
  */
 
-public class MovieDetailPresenter implements MovieDetailContract.Presenter{
+public class MovieDetailPresenter extends RxPresenter implements MovieDetailContract.Presenter{
 
     private MovieDetailContract.View mView;
 
@@ -47,16 +48,6 @@ public class MovieDetailPresenter implements MovieDetailContract.Presenter{
                     mView.showError();
                     throwable.printStackTrace();
                 });
-        mSubscriptions.add(subscription);
-    }
-
-    @Override
-    public void subscribe() {
-        Log.e("subscribe","subscribe");
-    }
-
-    @Override
-    public void unsubscribe() {
-        mSubscriptions.clear();
+        subscribe(subscription);
     }
 }

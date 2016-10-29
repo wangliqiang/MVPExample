@@ -4,9 +4,13 @@ package com.app.mvp.base;
  * Created by 王立强  on 2016/10/11.
  */
 
-public interface BasePresenter {
+public interface BasePresenter<T> {
 
-   void subscribe();
+   void attachView(T view);
 
-   void unsubscribe();
+   void detachView();
+
+//   void subscribe();
+//
+//   void unsubscribe();
 }

@@ -23,8 +23,6 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
     Toolbar toolbar;
     @Bind(R.id.simplemvp)
     Button simplemvp;
-    @Bind(R.id.scrollview)
-    Button scrollview;
     @Bind(R.id.bottom_navigation_bar)
     BottomNavigationBar bottomNavigationBar;
 
@@ -45,13 +43,11 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
         bottomNavigationBar.setTabSelectedListener(this);
     }
 
-    @OnClick({R.id.simplemvp, R.id.scrollview})
+    @OnClick({R.id.simplemvp})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.simplemvp:
                 startActivity(new Intent(this, MovieActivity.class));
-                break;
-            case R.id.scrollview:
                 break;
             default:
                 break;

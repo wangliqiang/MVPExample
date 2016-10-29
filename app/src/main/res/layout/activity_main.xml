@@ -19,12 +19,6 @@
             android:layout_margin="10dp"
             android:text="simple-mvp" />
 
-        <Button
-            android:id="@+id/scrollview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="observer-scrollview" />
     </LinearLayout>
 
     <com.ashokvarma.bottomnavigation.BottomNavigationBar

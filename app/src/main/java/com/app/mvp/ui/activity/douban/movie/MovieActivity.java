@@ -130,13 +130,11 @@ public class MovieActivity extends BaseActivity implements MovieContract.View{
     @Override
     public void onResume() {
         super.onResume();
-        mPresenter.subscribe();
     }
 
     @Override
     public void onPause() {
         super.onPause();
         swiperefreshlayout.setRefreshing(false);
-        mPresenter.unsubscribe();
     }
 }

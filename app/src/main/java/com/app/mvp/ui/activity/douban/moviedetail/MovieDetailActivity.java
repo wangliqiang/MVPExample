@@ -94,19 +94,16 @@ public class MovieDetailActivity extends BaseActivity implements MovieDetailCont
     @Override
     public void onResume() {
         super.onResume();
-        mPresenter.subscribe();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        mPresenter.unsubscribe();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mPresenter.unsubscribe();
     }
 
     @Override

@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.alibaba.fastjson.JSON;
 import com.app.mvp.api.ServerApi;
+import com.app.mvp.base.RxPresenter;
 import com.app.mvp.model.MovieInfo;
 import com.app.mvp.utils.Log;
 import com.lzy.okgo.OkGo;
@@ -20,15 +21,12 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * Created by wangliqiang on 2016/10/12.
  */
 
-public class MoviePresenter implements MovieContract.Presenter {
+public class MoviePresenter extends RxPresenter implements MovieContract.Presenter {
 
     private MovieContract.View mView;
     private MovieInfo mMovieInfo;
-    @NonNull
-    private CompositeSubscription mSubscriptions;
 
     public MoviePresenter(MovieContract.View view){
-        mSubscriptions = new CompositeSubscription();
         mView = checkNotNull(view,"View is not null");
         mView.setPresenter(this);
     }
@@ -54,16 +52,6 @@ public class MoviePresenter implements MovieContract.Presenter {
                     mView.showError();
                     throwable.printStackTrace();
                 });
-        mSubscriptions.add(subscription);
-    }
-
-    @Override
-    public void subscribe() {
-        Log.e("subscribe","subscribe");
-    }
-
-    @Override
-    public void unsubscribe() {
-        mSubscriptions.clear();
+        subscribe(subscription);
     }
 }
