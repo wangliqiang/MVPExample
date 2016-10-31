@@ -15,7 +15,9 @@ import butterknife.ButterKnife;
  * Created by 王立强 on 2016/10/9.
  */
 
-public abstract class BaseActivity extends AppCompatActivity{
+public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity{
+
+    private T presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,7 @@ public abstract class BaseActivity extends AppCompatActivity{
     protected void onPause() {
         super.onPause();
         OkGo.getInstance().cancelTag(this);
+        presenter = null;
     }
 
     @Override
@@ -33,12 +36,14 @@ public abstract class BaseActivity extends AppCompatActivity{
         super.onDestroy();
         ButterKnife.unbind(this);
         OkGo.getInstance().cancelTag(this);
+        presenter = null;
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         OkGo.getInstance().cancelTag(this);
+        presenter = null;
     }
 
     public void showError() {
@@ -62,4 +67,5 @@ public abstract class BaseActivity extends AppCompatActivity{
             dialog.dismiss();
         }
     }
+
 }
