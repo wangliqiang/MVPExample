@@ -1,4 +1,4 @@
-package com.app.mvp.ui.activity.douban.movie;
+package com.app.mvp.ui.activity.douban;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,8 @@ import android.support.v7.widget.Toolbar;
 import com.app.mvp.R;
 import com.app.mvp.base.BaseActivity;
 import com.app.mvp.model.MovieInfo;
-import com.app.mvp.ui.activity.douban.moviedetail.MovieDetailActivity;
+import com.app.mvp.presenter.MoviePresenter;
+import com.app.mvp.presenter.contract.MovieContract;
 import com.app.mvp.ui.adapter.MovieInfoAdapter;
 
 import java.util.ArrayList;

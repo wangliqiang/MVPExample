@@ -16,8 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.douban.movie.MovieActivity" />
-        <activity android:name=".ui.activity.douban.moviedetail.MovieDetailActivity" />
+        <activity android:name=".ui.activity.douban.MovieActivity" />
+        <activity android:name=".ui.activity.douban.MovieDetailActivity" />
     </application>
 
 </manifest>

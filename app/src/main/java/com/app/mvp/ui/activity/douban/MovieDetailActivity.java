@@ -1,4 +1,4 @@
-package com.app.mvp.ui.activity.douban.moviedetail;
+package com.app.mvp.ui.activity.douban;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -8,6 +8,8 @@ import android.widget.TextView;
 import com.app.mvp.R;
 import com.app.mvp.base.BaseActivity;
 import com.app.mvp.model.MovieDetailInfo;
+import com.app.mvp.presenter.MovieDetailPresenter;
+import com.app.mvp.presenter.contract.MovieDetailContract;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
 import com.github.ksoichiro.android.observablescrollview.ScrollState;

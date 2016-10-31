@@ -1,4 +1,4 @@
-package com.app.mvp.ui.activity.douban.movie;
+package com.app.mvp.presenter;
 
 import android.support.annotation.NonNull;
 
@@ -6,14 +6,13 @@ import com.alibaba.fastjson.JSON;
 import com.app.mvp.api.ServerApi;
 import com.app.mvp.base.RxPresenter;
 import com.app.mvp.model.MovieInfo;
-import com.app.mvp.utils.Log;
+import com.app.mvp.presenter.contract.MovieContract;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.convert.StringConvert;
 import com.lzy.okrx.RxAdapter;
 
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.subscriptions.CompositeSubscription;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -26,7 +25,7 @@ public class MoviePresenter extends RxPresenter implements MovieContract.Present
     private MovieContract.View mView;
     private MovieInfo mMovieInfo;
 
-    public MoviePresenter(MovieContract.View view){
+    public MoviePresenter(@NonNull MovieContract.View view){
         mView = checkNotNull(view,"View is not null");
         mView.setPresenter(this);
     }

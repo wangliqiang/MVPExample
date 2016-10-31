@@ -1,10 +1,10 @@
-package com.app.mvp.ui.activity.douban.moviedetail;
+package com.app.mvp.presenter;
 
 import com.alibaba.fastjson.JSON;
 import com.app.mvp.api.ServerApi;
 import com.app.mvp.base.RxPresenter;
 import com.app.mvp.model.MovieDetailInfo;
-import com.app.mvp.utils.Log;
+import com.app.mvp.presenter.contract.MovieDetailContract;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.convert.StringConvert;
 import com.lzy.okrx.RxAdapter;
@@ -19,7 +19,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * Created by 王立强 on 2016/10/12.
  */
 
-public class MovieDetailPresenter extends RxPresenter implements MovieDetailContract.Presenter{
+public class MovieDetailPresenter extends RxPresenter implements MovieDetailContract.Presenter {
 
     private MovieDetailContract.View mView;
 

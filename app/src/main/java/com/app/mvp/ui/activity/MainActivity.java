@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.app.mvp.R;
 import com.app.mvp.base.BaseActivity;
-import com.app.mvp.ui.activity.douban.movie.MovieActivity;
+import com.app.mvp.ui.activity.douban.MovieActivity;
 import com.app.mvp.utils.Log;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;

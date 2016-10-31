@@ -1,4 +1,4 @@
-package com.app.mvp.ui.activity.douban.movie;
+package com.app.mvp.presenter.contract;
 
 import com.app.mvp.base.BasePresenter;
 import com.app.mvp.base.BaseView;
@@ -9,7 +9,7 @@ import com.app.mvp.model.MovieInfo;
  */
 
 public class MovieContract {
-    interface View extends BaseView<Presenter> {
+    public interface View extends BaseView<Presenter> {
 
         void showMovieInfo(MovieInfo movieInfo);
 
@@ -20,7 +20,7 @@ public class MovieContract {
         void showError();
     }
 
-    interface Presenter extends BasePresenter {
+    public interface Presenter extends BasePresenter {
         void getMovieInfo(int start, int count);
     }
 }

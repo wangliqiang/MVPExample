@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.activity.douban.movie.MovieActivity">
+    tools:context=".ui.activity.douban.MovieActivity">
 
     <include layout="@layout/toolbar" />
 
