@@ -10,7 +10,4 @@ public interface BasePresenter<T> {
 
    void detachView();
 
-//   void subscribe();
-//
-//   void unsubscribe();
 }
