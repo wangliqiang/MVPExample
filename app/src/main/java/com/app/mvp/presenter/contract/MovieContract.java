@@ -8,8 +8,8 @@ import com.app.mvp.model.MovieInfo;
  * Created by 王立强 on 2016/10/12.
  */
 
-public class MovieContract {
-    public interface View extends BaseView<Presenter> {
+public interface MovieContract {
+    interface View extends BaseView<Presenter> {
 
         void showMovieInfo(MovieInfo movieInfo);
 
@@ -20,7 +20,7 @@ public class MovieContract {
         void showError();
     }
 
-    public interface Presenter extends BasePresenter {
+    interface Presenter extends BasePresenter {
         void getMovieInfo(int start, int count);
     }
 }

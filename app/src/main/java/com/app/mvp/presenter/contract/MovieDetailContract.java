@@ -8,9 +8,9 @@ import com.app.mvp.model.MovieDetailInfo;
  * Created by wangliqiang on 2016/10/12.
  */
 
-public class MovieDetailContract {
+public interface MovieDetailContract {
 
-    public interface View extends BaseView<Presenter> {
+    interface View extends BaseView<Presenter> {
 
         void showMovieDetail(MovieDetailInfo movieDetailInfo);
 
@@ -21,7 +21,7 @@ public class MovieDetailContract {
         void showError();
     }
 
-    public interface Presenter extends BasePresenter {
+    interface Presenter extends BasePresenter {
         void getMovieDetail(String id);
     }
 }
