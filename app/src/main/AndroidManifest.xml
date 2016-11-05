@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".ui.activity.douban.MovieActivity" />
         <activity android:name=".ui.activity.douban.MovieDetailActivity" />
+        <activity android:name=".ui.activity.bezier.BezierActivity"></activity>
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.app.mvp.R;
 import com.app.mvp.base.BaseActivity;
+import com.app.mvp.ui.activity.bezier.BezierActivity;
 import com.app.mvp.ui.activity.douban.MovieActivity;
 import com.app.mvp.utils.Log;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
@@ -25,6 +26,8 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
     Button simplemvp;
     @Bind(R.id.bottom_navigation_bar)
     BottomNavigationBar bottomNavigationBar;
+    @Bind(R.id.bezier)
+    Button bezier;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +46,14 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
         bottomNavigationBar.setTabSelectedListener(this);
     }
 
-    @OnClick({R.id.simplemvp})
+    @OnClick({R.id.simplemvp,R.id.bezier})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.simplemvp:
                 startActivity(new Intent(this, MovieActivity.class));
+                break;
+            case R.id.bezier:
+                startActivity(new Intent(this, BezierActivity.class));
                 break;
             default:
                 break;

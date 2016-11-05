@@ -17,7 +17,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="simple-mvp" />
+            android:text="豆瓣电影TOP250" />
+
+        <Button
+            android:id="@+id/bezier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="贝塞尔曲线" />
 
     </LinearLayout>
 
