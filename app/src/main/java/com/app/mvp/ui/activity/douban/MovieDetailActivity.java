@@ -21,7 +21,8 @@ import butterknife.ButterKnife;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-public class MovieDetailActivity extends BaseActivity implements MovieDetailContract.View, ObservableScrollViewCallbacks {
+public class MovieDetailActivity extends BaseActivity implements
+        MovieDetailContract.View, ObservableScrollViewCallbacks {
 
     Toolbar toolbar;
 
@@ -52,6 +53,21 @@ public class MovieDetailActivity extends BaseActivity implements MovieDetailCont
         initView();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
     private void initView() {
         new MovieDetailPresenter(this);
 
@@ -75,7 +91,7 @@ public class MovieDetailActivity extends BaseActivity implements MovieDetailCont
 
     @Override
     public void showMovieDetail(MovieDetailInfo movieDetailInfo) {
-        body.setText(movieDetailInfo.getSummary()+movieDetailInfo.getSummary()+movieDetailInfo.getSummary()+movieDetailInfo.getSummary());
+        body.setText(movieDetailInfo.getSummary() + movieDetailInfo.getSummary() + movieDetailInfo.getSummary() + movieDetailInfo.getSummary());
     }
 
     @Override
@@ -91,21 +107,6 @@ public class MovieDetailActivity extends BaseActivity implements MovieDetailCont
     @Override
     public void setPresenter(MovieDetailContract.Presenter presenter) {
         mPresenter = checkNotNull(presenter);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
     }
 
     @Override
