@@ -10,13 +10,23 @@ import com.app.mvp.R;
 import com.app.mvp.base.BaseActivity;
 import com.app.mvp.ui.activity.bezier.BezierActivity;
 import com.app.mvp.ui.activity.douban.MovieActivity;
+import com.app.mvp.utils.ApkUtils;
 import com.app.mvp.utils.Log;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.convert.FileConvert;
+import com.lzy.okgo.convert.StringConvert;
+import com.lzy.okrx.RxAdapter;
+
+import java.io.File;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action0;
+import rx.functions.Action1;
 
 public class MainActivity extends BaseActivity implements BottomNavigationBar.OnTabSelectedListener {
 
@@ -28,6 +38,8 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
     BottomNavigationBar bottomNavigationBar;
     @Bind(R.id.bezier)
     Button bezier;
+    @Bind(R.id.fileDownload)
+    Button fileDownload;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +58,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
         bottomNavigationBar.setTabSelectedListener(this);
     }
 
-    @OnClick({R.id.simplemvp,R.id.bezier})
+    @OnClick({R.id.simplemvp,R.id.bezier,R.id.fileDownload})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.simplemvp:
@@ -55,10 +67,31 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
             case R.id.bezier:
                 startActivity(new Intent(this, BezierActivity.class));
                 break;
+            case R.id.fileDownload:
+                fileDownload();
+                break;
             default:
                 break;
         }
     }
+
+    //文件下载
+    public void fileDownload(){
+        OkGo.post("")
+                .getCall(new FileConvert(), RxAdapter.<File>create())
+                .doOnSubscribe(() -> showLoading())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(file -> {
+                    dismissLoading();
+                    fileDownload.setText("下载完成"+file.length());
+                    ApkUtils.install(getApplicationContext(),file);
+                }, throwable -> {
+                    dismissLoading();
+                    throwable.printStackTrace();
+                    fileDownload.setText("下载失败");
+                });
+    }
+
 
     @Override
     public void onTabSelected(int position) {
