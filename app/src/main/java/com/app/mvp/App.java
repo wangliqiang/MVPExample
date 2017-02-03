@@ -30,12 +30,12 @@ public class App extends Application {
         } else {
             Timber.plant(new CrashReportingTree());
         }
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-            return;
-        }
         /**
          * 初始化LeakCanary
          */
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            return;
+        }
         LeakCanary.install(this);
         /**
          * 初始化OkGo
@@ -59,9 +59,12 @@ public class App extends Application {
         }
     }
 
-    /** A tree which logs important information for crash reporting. */
+    /**
+     * A tree which logs important information for crash reporting.
+     */
     private static class CrashReportingTree extends Timber.Tree {
-        @Override protected void log(int priority, String tag, String message, Throwable t) {
+        @Override
+        protected void log(int priority, String tag, String message, Throwable t) {
             if (priority == Log.VERBOSE || priority == Log.DEBUG) {
                 return;
             }
