@@ -7,9 +7,7 @@ import rx.subscriptions.CompositeSubscription;
  * Created by 王立强 on 2016/10/29.
  */
 
-public class RxPresenter<T> implements BasePresenter<T>{
-
-    protected T mView;
+public abstract class RxPresenter<T>{
 
     protected CompositeSubscription mCompositeSubscription;
 
@@ -24,16 +22,5 @@ public class RxPresenter<T> implements BasePresenter<T>{
         if (mCompositeSubscription != null) {
             mCompositeSubscription.unsubscribe();
         }
-    }
-
-    @Override
-    public void attachView(T view) {
-        this.mView  = view;
-    }
-
-    @Override
-    public void detachView() {
-        this.mView = null;
-        unsubscribe();
     }
 }

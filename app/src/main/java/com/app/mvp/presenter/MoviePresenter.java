@@ -1,15 +1,19 @@
 package com.app.mvp.presenter;
 
 import android.support.annotation.NonNull;
+import android.view.View;
 
 import com.alibaba.fastjson.JSON;
 import com.app.mvp.api.ServerApi;
 import com.app.mvp.base.RxPresenter;
 import com.app.mvp.model.MovieInfo;
 import com.app.mvp.presenter.contract.MovieContract;
+import com.app.mvp.utils.Log;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.convert.StringConvert;
 import com.lzy.okrx.RxAdapter;
+
+import java.util.Date;
 
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
@@ -38,12 +42,14 @@ public class MoviePresenter extends RxPresenter implements MovieContract.Present
                 .params("count", count)
                 .getCall(StringConvert.create(), RxAdapter.<String>create())
                 .doOnSubscribe(() -> {
+                    Log.e("开始：",new Date().getSeconds()+"");
                     if(mMovieInfo == null){
                         mView.showLoading();
                     }
                 })
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(s -> {
+                    Log.e("结束：",new Date().getSeconds()+"");
                     mView.dismissLoading();
                     mMovieInfo  = JSON.parseObject(s, MovieInfo.class);
                     mView.showMovieInfo(mMovieInfo);
